@@ -22,6 +22,29 @@
           <mat-form-field>
             <input matInput placeholder="Nombre de Campaña" formControlName="firstCtrl" required>
           </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Status</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let status of status" [value]="status.value">
+                {{status.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Special Ad</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let specialAd of specialAd" [value]="specialAd.value">
+                {{specialAd.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Objecive" formControlName="firstCtrl" required>
+          </mat-form-field>
+
           <div>
             <button mat-button matStepperNext>Next</button>
           </div>
@@ -49,6 +72,7 @@
           </mat-form-field>
 
           <button mat-button (click)="stepper.reset()">Reset</button>
+          <button mat-button (click)="stepper.reset()">Post</button>
         </div>
       </mat-step>
     </mat-horizontal-stepper>

@@ -7,14 +7,20 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
   styleUrls: ['./dashboard.component.scss']
 })
 
+
+
 export class DashboardComponent implements OnInit {
+
 
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirtFormGroup: FormGroup;
+  status: string;
 
   constructor(private _formBuilder: FormBuilder) { }
+
+
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
