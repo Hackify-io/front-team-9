@@ -1,0 +1,60 @@
+<mat-drawer-container class="main-container">
+  <mat-drawer mode="side" opened>
+      <mat-list role="list">
+          <mat-list-item role="listitem">
+                  <div class="button-list">
+                    <button mat-button routerLink=""><mat-icon>speed</mat-icon>DashBoard</button>
+                    <button mat-button routerLink=""><mat-icon>perm_identity</mat-icon>Audience</button>
+                    <button mat-button routerLink=""><mat-icon>home</mat-icon>MyProfile</button>
+                    <button mat-button routerLink=""><mat-icon>build</mat-icon>Settings</button>
+                  </div>
+
+          </mat-list-item>
+      </mat-list>
+  </mat-drawer>
+
+  <form class="autoFlex">
+
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Campaña</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Nombre de Campaña" formControlName="firstCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>AdSet</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Add Set" formControlName="secondCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Add</ng-template>
+        You are now done.
+        <div>
+          <button mat-button matStepperPrevious>Add Image</button>
+          <mat-form-field>
+            <input matInput placeholder="Tittle" formControlName="thirtCtrl" required>
+          </mat-form-field>
+
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+
+  </form>
+
+
+
+</mat-drawer-container>
